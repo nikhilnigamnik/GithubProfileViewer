@@ -7,6 +7,7 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Repo from "./screens/Repo.jsx";
 import RepoContent from "./screens/RepoContent.jsx";
 import Commit from "./screens/Commit.jsx";
+import RepoContentData from "./screens/RepoContentData.jsx";
 
 const router = createBrowserRouter([
   {
@@ -24,11 +25,21 @@ const router = createBrowserRouter([
       {
         path: "/repos/:id/:repoName",
         element: <RepoContent />,
+        children: [
+          {
+            path: "contents/:path",
+            element: <RepoContentData />,
+          },
+        ],
       },
       {
         path: "/repos/:id/:repoName/commits",
         element: <Commit />,
       },
+      // {
+      //   path: "/repos/:id/:repoName/contents/:path",
+      //   element: <RepoContentData />,
+      // },
     ],
   },
 ]);

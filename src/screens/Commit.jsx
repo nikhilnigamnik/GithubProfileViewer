@@ -30,11 +30,13 @@ const Commit = () => {
   const handlePrevPage = () => {
     if (currentPage > 1) {
       setCurrentPage(currentPage - 1);
+      window.scrollTo(0, 0);
     }
   };
 
   const handleNextPage = () => {
     setCurrentPage(currentPage + 1);
+    window.scrollTo(0, 0);
   };
 
   return (
@@ -46,8 +48,8 @@ const Commit = () => {
         <button>Total Commit : {commit.length}</button>
       </div>
       <div className="flex flex-col  gap-4 ">
-        {commit.map((el) => (
-          <div className="border-[#343537] border rounded py-1 px-4 flex flex-col gap-3">
+        {commit.map((el,i) => (
+          <div key={i} className="border-[#343537] border rounded py-1 px-4 flex flex-col gap-3">
             <p>Commits on {formatTime(el?.commit?.committer?.date)}</p>
             <h1>{el.commit.message}</h1>
             <div className="flex items-center gap-4">
