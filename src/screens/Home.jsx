@@ -22,7 +22,7 @@ const Home = () => {
       setLoading(false);
     }
   };
-  console.log(data);
+  
   const handleSearch = () => {
     const username = document.getElementById("username").value;
     getUserData(username);

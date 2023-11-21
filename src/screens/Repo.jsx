@@ -21,7 +21,7 @@ const Repo = () => {
         params: { page, per_page: itemsPerPage },
       });
       setRepo(res.data);
-      console.log(res.data);
+      
     } catch (error) {
       console.log(error);
     } finally {

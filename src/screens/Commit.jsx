@@ -16,7 +16,7 @@ const Commit = () => {
       const res = await axios.get(`${apiURL}/repos/${id}/${repoName}/commits`, {
         params: { page, per_page: itemsPerPage },
       });
-      console.log(res.data);
+
       setCommit(res.data);
     } catch (error) {
       console.log(error);
@@ -48,8 +48,11 @@ const Commit = () => {
         <button>Total Commit : {commit.length}</button>
       </div>
       <div className="flex flex-col  gap-4 ">
-        {commit.map((el,i) => (
-          <div key={i} className="border-[#343537] border rounded py-1 px-4 flex flex-col gap-3">
+        {commit.map((el, i) => (
+          <div
+            key={i}
+            className="border-[#343537] border rounded py-1 px-4 flex flex-col gap-3"
+          >
             <p>Commits on {formatTime(el?.commit?.committer?.date)}</p>
             <h1>{el.commit.message}</h1>
             <div className="flex items-center gap-4">
