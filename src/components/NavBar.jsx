@@ -1,5 +1,5 @@
 import React from "react";
-import Logo from "../assets/gitLogo.png";
+
 import { useParams } from "react-router-dom";
 import { FaUserAlt } from "react-icons/fa";
 const NavBar = () => {
@@ -8,7 +8,13 @@ const NavBar = () => {
     <nav className="sticky">
       <div className=" flex flex-wrap items-center justify-between mx-auto p-4">
         <a className="flex items-center space-x-3 rtl:space-x-reverse">
-          <img src={Logo} className="h-8" alt="Logo" />
+          <img
+            src={
+              "https://res.cloudinary.com/dtmp7op6k/image/upload/v1700551423/xjnu4cputmawbebojn1v.png"
+            }
+            className="h-8"
+            alt="Logo"
+          />
           <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
             GitHub
           </span>
